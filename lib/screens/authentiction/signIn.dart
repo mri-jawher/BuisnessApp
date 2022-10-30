@@ -55,18 +55,32 @@ Widget _buildLargeScreen(
     Size size,
     SimpleUIController simpleUIController,BuildContext context
     ) {
-  return Container(
-    decoration: BoxDecoration(
-      image: DecorationImage(
-        image: AssetImage("images/Backeground1.png"),
-        fit: BoxFit.cover,
+  if (size.height>800){
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/Backeground1.png"),
+          fit: BoxFit.cover,
+        ),
       ),
-    ),
-    child: Center(child: Card(margin:EdgeInsets.all(6),child: Padding(padding: EdgeInsets.all(8),
-        child:Container(width:500,height:size.height,child: _signe())))) ,/* add child content here */
-  );
-}
+      child: Center(child: Card(margin:EdgeInsets.all(6),child: Padding(padding: EdgeInsets.all(8),
+          child:Container(width:500,height:800,child: _signe())))) ,/* add child content here */
+    );}
+  else{
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/Backeground1.png"),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Center(child: Card(margin:EdgeInsets.all(6),child: Padding(padding: EdgeInsets.all(8),
+          child:Container(width:500,height:size.height,child: _signe())))) ,/* add child content here */
+    );
+  }
 
+
+}
 
 class _signe extends StatefulWidget {
   _signe({Key? key}) : super(key: key);
@@ -97,9 +111,8 @@ class _signeState extends State<_signe> {
     bool isChecked = false;
     return Column(
       children: [
-        SizedBox(height: size.height/40,),
         Expanded(flex: 2,child: Container(decoration: BoxDecoration(borderRadius:BorderRadius.circular(100) ),child: Image.asset("images/logo.png"))),
-        Expanded(flex: 5,
+        Expanded(flex: 6,
             child: Column(
               children: [
                 SizedBox(height: size.height/40,),
@@ -152,20 +165,20 @@ class _signeState extends State<_signe> {
                   },
                 ),Text("Remember me")],),
                 SizedBox(height: size.height/40,)
-                ,InkWell(onTap: (){}, child:Padding( padding: EdgeInsets.fromLTRB(50,0,50,0),child: Container(height:size.height/12,decoration: BoxDecoration(color: Colors.green,borderRadius: BorderRadius.circular(50)),child: Center(child: Text("Sign up",style: TextStyle(color: Colors.white),)),))),
+                ,InkWell(onTap: (){}, child:Padding( padding: EdgeInsets.fromLTRB(50,0,50,0),child: Container(height:size.height/12,decoration: BoxDecoration(color: Colors.green,borderRadius: BorderRadius.circular(50)),child: Center(child: Text("Sign in",style: TextStyle(color: Colors.white),)),))),
                 SizedBox(height: size.height/30,)
                 ,Row(children: [ Expanded(child: Divider()), Text("    or    ",), Expanded(child: Divider()),],),
                 SizedBox(height: size.height/30,),
                 Row(mainAxisAlignment: MainAxisAlignment.center,children: [Text("Continue with",style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),)],),
                 SizedBox(height: size.height/50,),
                 Row(mainAxisAlignment:MainAxisAlignment.center,children: [
-                  InkWell(child: Image.asset(height:40 ,width:30 ,'images/facebook.png')),
+                  InkWell(child: Image.asset(height:size.height/30 ,width:size.width/20 ,'images/facebook.png')),
                   SizedBox(width: size.width/20,),
-                  InkWell(child: Image.asset(height:size.height/25 ,width:30 ,'images/google.png')),
+                  InkWell(child: Image.asset(height:size.height/30 ,width:size.width/20 ,'images/google.png')),
                   SizedBox(width: size.width/20,),
-                  InkWell(child: Image.asset(height:size.height/25 ,width:30 ,'images/whatsapp.png')),
+                  InkWell(child: Image.asset(height:size.height/30 ,width:size.width/20 ,'images/whatsapp.png')),
                 ],),
-                SizedBox(height: size.height/50,),
+                SizedBox(height: size.height/60,),
                 Row(mainAxisAlignment: MainAxisAlignment.center,children: [Text("Don't have an account?   ",style: TextStyle(color: Colors.grey),),InkWell(onTap: (){
                   Navigator.push(
                     context,

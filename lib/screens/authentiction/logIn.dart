@@ -52,18 +52,32 @@ Widget _buildLargeScreen(
     Size size,
     SimpleUIController simpleUIController,BuildContext context
     ) {
-  return Container(
-    decoration: BoxDecoration(
-      image: DecorationImage(
-        image: AssetImage("images/Backeground1.png"),
-        fit: BoxFit.cover,
+  if (size.height>800){
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/Backeground1.png"),
+          fit: BoxFit.cover,
+        ),
       ),
-    ),
-    child: Center(child: Card(margin:EdgeInsets.all(6),child: Padding(padding: EdgeInsets.all(8),
-    child:Container(width:400,height:size.height,child: _signeUP(size,simpleUIController,context),)))) ,/* add child content here */
-  );
-}
+      child: Center(child: Card(margin:EdgeInsets.all(6),child: Padding(padding: EdgeInsets.all(8),
+          child:Container(width:500,height:800,child: _signeUP(size,simpleUIController,context))))) ,/* add child content here */
+    );}
+  else{
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/Backeground1.png"),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Center(child: Card(margin:EdgeInsets.all(6),child: Padding(padding: EdgeInsets.all(8),
+          child:Container(width:500,height:size.height,child: _signeUP(size,simpleUIController,context))))) ,/* add child content here */
+    );
+  }
 
+
+}
 
 
 Widget _signeUP(
@@ -73,9 +87,8 @@ Size size,
 
   return Column(
     children: [
-      SizedBox(height: size.height/40,),
       Expanded(flex: 2,child: Container(decoration: BoxDecoration(borderRadius:BorderRadius.circular(100) ),child: Image.asset("images/logo.png"))),
-      Expanded(flex: 5,
+      Expanded(flex: 6,
   child: Column(
   children: [
     SizedBox(height: size.height/30,),
