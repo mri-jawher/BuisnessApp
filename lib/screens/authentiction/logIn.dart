@@ -52,7 +52,7 @@ Widget _buildLargeScreen(
     Size size,
     SimpleUIController simpleUIController,BuildContext context
     ) {
-  if (size.height>800){
+  if (size.height>900){
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -61,7 +61,7 @@ Widget _buildLargeScreen(
         ),
       ),
       child: Center(child: Card(margin:EdgeInsets.all(6),child: Padding(padding: EdgeInsets.all(8),
-          child:Container(width:500,height:800,child: _signeUP(size,simpleUIController,context))))) ,/* add child content here */
+          child:Container(width:500,height:900,child: _signeUP(size,simpleUIController,context))))) ,/* add child content here */
     );}
   else{
     return Container(
@@ -128,5 +128,5 @@ Size size,
 
 
 Widget _Button(String ImageDir,String name,Size size){
-  return Container(width: size.width/1.3,height:size.height/12 ,decoration: BoxDecoration(color: Colors.white,border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(15)),child: Row(children: [SizedBox(width: size.height/7),Image.asset(ImageDir,height: 30,width: 30,),SizedBox(width: 30,),Text(name,style: TextStyle(fontWeight: FontWeight.bold),)],));
+  return Container(width: size.width/1.3,height:size.height/12 ,decoration: BoxDecoration(color: Colors.white,border: Border.all(color: Colors.grey),borderRadius: BorderRadius.circular(15)),child: Row(mainAxisAlignment: MainAxisAlignment.center,children: [Image.asset(ImageDir,height: 30,width: 30,),SizedBox(width: 30,),Text(name,style: TextStyle(fontWeight: FontWeight.bold),)],));
 }
