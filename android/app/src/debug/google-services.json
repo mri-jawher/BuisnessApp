@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "512421715945",
+    "project_id": "buisnessapp-e142b",
+    "storage_bucket": "buisnessapp-e142b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512421715945:android:7a8c28f68f68b9b039f578",
+        "android_client_info": {
+          "package_name": "com.example.buisness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512421715945-17guslve1ibj1eh057miad7itmfcdhn7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.buisness",
+            "certificate_hash": "a00eed617a473081c8559e86a0cfcc488ed2c0ef"
+          }
+        },
+        {
+          "client_id": "512421715945-5l6tejsifa4cak17du9u7qs0dtlsbo8g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvzenK3xvSNmCGWnceg7u7VvTwovN5g6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512421715945-5l6tejsifa4cak17du9u7qs0dtlsbo8g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

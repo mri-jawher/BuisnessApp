@@ -1,3 +1,4 @@
+import 'package:buisness/screens/mainApp/homePage.dart';
 import 'package:flutter/material.dart';
 
 class naveBar extends StatefulWidget {
@@ -12,20 +13,17 @@ class _naveBarState extends State<naveBar> {
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
+    homePage(),
     Text(
-      'Index 0: Home',
+      'Basket',
       style: optionStyle,
     ),
     Text(
-      'Index 1: Business',
+      'Extra',
       style: optionStyle,
     ),
     Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
+      'Settings',
       style: optionStyle,
     ),
   ];
@@ -43,21 +41,26 @@ class _naveBarState extends State<naveBar> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor:Colors.grey,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
+            icon: Icon(Icons.home_outlined,color: Colors.grey),
+            activeIcon:Icon(Icons.home_outlined,color: Colors.green),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_basket_outlined),
+            icon: Icon(Icons.shopping_bag_outlined,color: Colors.grey),
+            activeIcon:Icon(Icons.shopping_bag_outlined,color: Colors.green),
             label: 'Basket',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.extension_rounded),
+            icon: Icon(Icons.extension_outlined,color: Colors.grey),
+            activeIcon:Icon(Icons.extension_outlined,color: Colors.green),
             label: 'Extra',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings_outlined),
+            icon: Icon(Icons.settings_outlined,color: Colors.grey,),
+            activeIcon:Icon(Icons.settings_outlined,color: Colors.green),
             label: 'Settings',
           ),
         ],
